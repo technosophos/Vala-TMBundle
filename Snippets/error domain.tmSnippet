@@ -3,27 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/**
- * ${6}
- */
-${1:public} class ${2:MethodName}${3: : GLib.Object} {
-
-	/**
-	 * ${7}
-	 */
-	public ${2}(${4}) {
-		${5}
-	}
-
+	<string>public errordomain ${1:Error} {
 	$0
 }</string>
 	<key>name</key>
-	<string>class</string>
+	<string>error domain</string>
 	<key>scope</key>
 	<string>source.vala</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>errordomain</string>
 	<key>uuid</key>
-	<string>1C932693-BAEC-4953-8595-BFE35AB1684A</string>
+	<string>F4A0764F-492E-4FC0-A2E8-034BC9B6CD4F</string>
 </dict>
 </plist>

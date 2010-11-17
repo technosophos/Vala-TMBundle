@@ -3,27 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/**
- * ${6}
- */
-${1:public} class ${2:MethodName}${3: : GLib.Object} {
-
-	/**
-	 * ${7}
-	 */
-	public ${2}(${4}) {
-		${5}
-	}
-
-	$0
-}</string>
+	<string>[DBus(name = "$0")]</string>
 	<key>name</key>
-	<string>class</string>
+	<string>DBus annotation</string>
 	<key>scope</key>
 	<string>source.vala</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>[DBus</string>
 	<key>uuid</key>
-	<string>1C932693-BAEC-4953-8595-BFE35AB1684A</string>
+	<string>AC64F6AA-4F38-41EA-A4A8-31DF9EB7B045</string>
 </dict>
 </plist>

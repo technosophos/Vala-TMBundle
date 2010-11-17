@@ -3,27 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/**
- * ${6}
- */
-${1:public} class ${2:MethodName}${3: : GLib.Object} {
-
-	/**
-	 * ${7}
-	 */
-	public ${2}(${4}) {
-		${5}
-	}
-
-	$0
-}</string>
+	<string>delegate ${1:void} ${2:DelegateName}($0);</string>
 	<key>name</key>
-	<string>class</string>
+	<string>delegate</string>
 	<key>scope</key>
 	<string>source.vala</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>delegate</string>
 	<key>uuid</key>
-	<string>1C932693-BAEC-4953-8595-BFE35AB1684A</string>
+	<string>90B64355-F525-4D18-A11B-517926E14AEC</string>
 </dict>
 </plist>

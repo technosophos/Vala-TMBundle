@@ -3,27 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/**
- * ${6}
- */
-${1:public} class ${2:MethodName}${3: : GLib.Object} {
-
-	/**
-	 * ${7}
-	 */
-	public ${2}(${4}) {
-		${5}
-	}
-
+	<string>interface ${1:InterfaceName}{$2: : SuperInterface} {
 	$0
 }</string>
 	<key>name</key>
-	<string>class</string>
+	<string>interface</string>
 	<key>scope</key>
 	<string>source.vala</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>interface</string>
 	<key>uuid</key>
-	<string>1C932693-BAEC-4953-8595-BFE35AB1684A</string>
+	<string>78A10A26-251E-4A6B-8E0F-2B00E3D31F66</string>
 </dict>
 </plist>

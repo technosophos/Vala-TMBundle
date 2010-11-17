@@ -3,27 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/**
- * ${6}
- */
-${1:public} class ${2:MethodName}${3: : GLib.Object} {
-
-	/**
-	 * ${7}
-	 */
-	public ${2}(${4}) {
-		${5}
-	}
-
+	<string>enum {$1:EnumName} {
 	$0
 }</string>
 	<key>name</key>
-	<string>class</string>
+	<string>enum</string>
 	<key>scope</key>
 	<string>source.vala</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>enum</string>
 	<key>uuid</key>
-	<string>1C932693-BAEC-4953-8595-BFE35AB1684A</string>
+	<string>72D006C9-4691-42B2-AB0A-C4F008EAD8D2</string>
 </dict>
 </plist>

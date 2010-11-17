@@ -3,27 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/**
- * ${6}
- */
-${1:public} class ${2:MethodName}${3: : GLib.Object} {
-
-	/**
-	 * ${7}
-	 */
-	public ${2}(${4}) {
-		${5}
-	}
-
-	$0
-}</string>
+	<string>Gee.ArrayList&lt;${1:G}&gt;($0);</string>
 	<key>name</key>
-	<string>class</string>
+	<string>Gee.ArrayList</string>
 	<key>scope</key>
 	<string>source.vala</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>ArrayList</string>
 	<key>uuid</key>
-	<string>1C932693-BAEC-4953-8595-BFE35AB1684A</string>
+	<string>F6C409C6-27BB-45F1-9063-1AD925F2C9CF</string>
 </dict>
 </plist>
