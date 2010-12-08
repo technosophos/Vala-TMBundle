@@ -13,6 +13,11 @@
 			<string>ArrayList</string>
 			<string>HashSet</string>
 			<string>HashMap</string>
+			<string>OptionArg</string>
+			<string>OptionContext</string>
+			<string>OptionEntry</string>
+			<string>stdout</string>
+			<string>stderr</string>
 		</array>
 	</dict>
 	<key>uuid</key>

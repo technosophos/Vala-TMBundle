@@ -1093,7 +1093,7 @@
 							<key>match</key>
 							<string>%[\w\.\-]+</string>
 							<key>name</key>
-							<string>constant.character.printf.vala</string>
+							<string>constant.character.escape.vala</string>
 						</dict>
 					</array>
 				</dict>
@@ -1159,7 +1159,7 @@
 							<key>match</key>
 							<string>%[\w\.\-]+</string>
 							<key>name</key>
-							<string>constant.character.printf.vala</string>
+							<string>constant.character.escape.vala</string>
 						</dict>
 					</array>
 				</dict>
@@ -1198,13 +1198,13 @@
 							<key>match</key>
 							<string>%[\w\.\-]+</string>
 							<key>name</key>
-							<string>constant.character.printf.vala</string>
+							<string>constant.character.escape.vala</string>
 						</dict>
 						<dict>
 							<key>match</key>
 							<string>\$(\w+|\([\w\s\+\-\*\/]+\))</string>
 							<key>name</key>
-							<string>constant.character.interpolated.vala</string>
+							<string>constant.character.escape.vala</string>
 						</dict>
 					</array>
 				</dict>
