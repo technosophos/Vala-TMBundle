@@ -16,6 +16,7 @@
 * lock blocks?
 * regex literals
 * DocBlock syntax highlighting.
+* Folding rule for comments.
 </string>
 	<key>fileTypes</key>
 	<array>
@@ -525,7 +526,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>text.html.valadoc</string>
+					<string>text.html.javadoc</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1060,6 +1061,39 @@
 			<array>
 				<dict>
 					<key>begin</key>
+					<string>@"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.vala</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.vala</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.interpolated.vala</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\.|%[\w\.\-]+|\$(\w+|\([\w\s\+\-\*\/]+\))</string>
+							<key>name</key>
+							<string>constant.character.escape.vala</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>"</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1152,57 +1186,12 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>string.quoted.verbatim.vala</string>
+					<string>string.quoted.triple.vala</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
 							<string>%[\w\.\-]+</string>
-							<key>name</key>
-							<string>constant.character.escape.vala</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>@"</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.vala</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>"</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.vala</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>string.quoted.template.vala</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>\\.</string>
-							<key>name</key>
-							<string>constant.character.escape.vala</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>%[\w\.\-]+</string>
-							<key>name</key>
-							<string>constant.character.escape.vala</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>\$(\w+|\([\w\s\+\-\*\/]+\))</string>
 							<key>name</key>
 							<string>constant.character.escape.vala</string>
 						</dict>
