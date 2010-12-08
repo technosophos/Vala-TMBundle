@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>completions</string>
+	<key>scope</key>
+	<string>source.vala</string>
+	<key>settings</key>
+	<dict>
+		<key>completions</key>
+		<array>
+			<string>ArrayList</string>
+			<string>HashSet</string>
+			<string>HashMap</string>
+		</array>
+	</dict>
+	<key>uuid</key>
+	<string>6CE46B21-5E7D-4712-9817-30C86758841D</string>
+</dict>
+</plist>

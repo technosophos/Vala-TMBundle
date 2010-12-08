@@ -20,3 +20,5 @@ This will install all you need to begin working with Vala.
 
 This is based on the original Vala TextMate bundle by Daniel Lucraft
 [The original](http://danlucraft.com/blog/2008/12/vala-textmate-bundle/)
+
+The Vala grammer is based upon the Java grammar that ships with TextMate.

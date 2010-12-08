@@ -4,13 +4,18 @@
 <dict>
 	<key>comment</key>
 	<string>Based heavily on the Java bundle's language syntax. TODO:
-* String templates 
-* Verbatim strings
 * Closures
 * Delegates
-* properties
+* Properties
 * Annotations
-* Error domains 
+* Error domains
+* Named arguments
+* Pointer syntax highlighting: *, &amp;, and -&gt;
+* Array slicing, negative indexes, multidimensional
+* construct blocks
+* lock blocks?
+* regex literals
+* DocBlock syntax highlighting.
 </string>
 	<key>fileTypes</key>
 	<array>
@@ -260,7 +265,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\b(assert)\s</string>
+					<string>\b(assert|requires|ensures)\s</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -332,7 +337,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(class|(?:@)?interface|enum|struct|namespace)\s+(\w+)</string>
+					<string>(class|(?:@)?interface|enum|struct|namespace)\s+([\w\.]+)</string>
 					<key>name</key>
 					<string>meta.class.identifier.vala</string>
 				</dict>
@@ -579,7 +584,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(this|super)\b</string>
+					<string>\b(this|base)\b</string>
 					<key>name</key>
 					<string>variable.language.vala</string>
 				</dict>
@@ -663,19 +668,19 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\?|:</string>
+					<string>\?|:|\?\?</string>
 					<key>name</key>
 					<string>keyword.control.vala</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(return|break|case|continue|default|do|while|for|foreach|switch|if|else|in)\b</string>
+					<string>\b(return|break|case|continue|default|do|while|for|foreach|switch|if|else|in|yield)\b</string>
 					<key>name</key>
 					<string>keyword.control.vala</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(typeof)\b</string>
+					<string>\b(typeof|is|as)\b</string>
 					<key>name</key>
 					<string>keyword.operator.vala</string>
 				</dict>
@@ -721,6 +726,12 @@
 					<key>name</key>
 					<string>punctuation.terminator.vala</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>(owned|unowned)</string>
+					<key>name</key>
+					<string>keyword.operator.ownership</string>
+				</dict>
 			</array>
 		</dict>
 		<key>methods</key>
@@ -739,7 +750,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(\w+)\s*\(</string>
+					<string>([\~\w\.]+)\s*\(</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -801,7 +812,7 @@
 			<key>begin</key>
 			<string>^(?=\s*[A-Z0-9_]+\s*({|\(|,))</string>
 			<key>comment</key>
-			<string>This is not quite right.</string>
+			<string>This is not quite right. See the class grammar right now</string>
 			<key>end</key>
 			<string>(?=;|})</string>
 			<key>patterns</key>
@@ -1008,7 +1019,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(?:bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string|void)(\[\])*\b</string>
+					<string>\b(?:bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string|void|int8|int16|int32|int64|uint8|uint16|uint32|uint64)(\[\])*\b</string>
 					<key>name</key>
 					<string>storage.type.primitive.array.vala</string>
 				</dict>
@@ -1022,7 +1033,7 @@
 					<key>comment</key>
 					<string>var is not really a primitive, but acts like one in most cases</string>
 					<key>match</key>
-					<string>\b(?:var|bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string|void)\b</string>
+					<string>\b(?:var|bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string|void|signal|int8|int16|int32|int64|uint8|uint16|uint32|uint64)\b</string>
 					<key>name</key>
 					<string>storage.type.primitive.vala</string>
 				</dict>
@@ -1041,7 +1052,7 @@
 			<key>comment</key>
 			<string>Not sure about unsafe and readonly</string>
 			<key>match</key>
-			<string>\b(public|private|protected|static|final|sealed|virtual|abstract|readonly|volatile|unsafe|in|out|ref)\b</string>
+			<string>\b(public|private|protected|internal|static|final|sealed|virtual|override|abstract|readonly|volatile|dynamic|async|unsafe|out|ref|weak|owned|unowned|const)\b</string>
 		</dict>
 		<key>strings</key>
 		<dict>
@@ -1078,6 +1089,12 @@
 							<key>name</key>
 							<string>constant.character.escape.vala</string>
 						</dict>
+						<dict>
+							<key>match</key>
+							<string>%[\w\.\-]+</string>
+							<key>name</key>
+							<string>constant.character.printf.vala</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>
@@ -1110,6 +1127,84 @@
 							<string>\\.</string>
 							<key>name</key>
 							<string>constant.character.escape.vala</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>"""</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.vala</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"""</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.vala</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.verbatim.vala</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>%[\w\.\-]+</string>
+							<key>name</key>
+							<string>constant.character.printf.vala</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>@"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.vala</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.vala</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.template.vala</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\.</string>
+							<key>name</key>
+							<string>constant.character.escape.vala</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>%[\w\.\-]+</string>
+							<key>name</key>
+							<string>constant.character.printf.vala</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\$(\w+|\([\w\s\+\-\*\/]+\))</string>
+							<key>name</key>
+							<string>constant.character.interpolated.vala</string>
 						</dict>
 					</array>
 				</dict>
