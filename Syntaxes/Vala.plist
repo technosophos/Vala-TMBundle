@@ -6,16 +6,15 @@
 	<string>Based heavily on the Java bundle's language syntax. TODO:
 * Closures
 * Delegates
-* Properties
+* Properties: Better support for properties.
 * Annotations
 * Error domains
 * Named arguments
-* Pointer syntax highlighting: *, &amp;, and -&gt;
 * Array slicing, negative indexes, multidimensional
 * construct blocks
 * lock blocks?
 * regex literals
-* DocBlock syntax highlighting.
+* DocBlock syntax highlighting. (Currently importing javadoc)
 * Folding rule for comments.
 </string>
 	<key>fileTypes</key>
@@ -675,7 +674,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(return|break|case|continue|default|do|while|for|foreach|switch|if|else|in|yield)\b</string>
+					<string>\b(return|break|case|continue|default|do|while|for|foreach|switch|if|else|in|yield|get|set|value)\b</string>
 					<key>name</key>
 					<string>keyword.control.vala</string>
 				</dict>
@@ -864,7 +863,7 @@
 					<key>begin</key>
 					<string>\b((?:[a-z]\w*\.)*[A-Z]+\w*)&lt;</string>
 					<key>end</key>
-					<string>&gt;|[^\w\s,\?&lt;\[\]]</string>
+					<string>&gt;|[^\w\s,\?&lt;\[(?:[,]+)\]]</string>
 					<key>name</key>
 					<string>storage.type.generic.vala</string>
 					<key>patterns</key>
