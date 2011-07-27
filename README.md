@@ -22,6 +22,22 @@ TextMate text editor.
     mv technosophos-Vala-TMBundle* "Vala.tmbundle"
     osascript -e 'tell app "TextMate" to reload bundles'
 
+# Installing for Sublime Text 2
+Sublime Text is able to use language and snippets from TextMate. Sublime Text 2 is adding even more TextMate compatibility support. This bundle can be installed for Sublime Text.
+
+## Using Git:
+
+    cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
+    git clone git://github.com/technosophos/Vala-TMBundle.git Vala
+
+## Without Git:
+
+    cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
+    wget https://github.com/technosophos/Vala-TMBundle/tarball/master
+    tar zxf technosophos-Vala-TMBundle*.tar.gz
+    rm technosophos-Vala-TMBundle*.tar.gz
+    mv technosophos-Vala-TMBundle* Vala
+
 # Getting Vala on the Mac
 
 The easiest way to get Vala on the Mac is to use Homebrew and run
