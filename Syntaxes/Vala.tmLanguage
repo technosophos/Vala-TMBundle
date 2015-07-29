@@ -20,6 +20,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>vala</string>
+		<string>vapi</string>
 	</array>
 	<key>foldingStartMarker</key>
 	<string>(\{\s*(//.*)?$|^\s*// \{\{\{)</string>
